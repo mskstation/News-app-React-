@@ -32,7 +32,7 @@ function Home({ searchQuery = "" }) {
         filterArticles(data, searchQuery);
       } catch (error) {
         console.error(error);
-        setError("News load nahi ho paayi.");
+        setError(error?.message || "News load nahi ho paayi.");
         setArticles([]);
       } finally {
         setLoading(false);
